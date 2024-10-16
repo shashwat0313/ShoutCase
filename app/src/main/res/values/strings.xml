@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">shoutCase</string>
+    <string name="BUTTON_TEXT">Shout!</string>
+    <string name="BUTTON_SIZE">BUTTON_SIZE_DP</string>
+    <string name="BUTTON_TEXT_SIZE">BUTTON_TEXT_SIZE_DP</string>
+    <string name="BUTTON_COLOR">BUTTON_COLOR_INT</string>
+    <string name="BUTTON_TEXT_COLOR">BUTTON_TEXT_COLOR</string>
+    <string name="BOOLEAN_EXCLAMATION">BOOLEAN_EXCLAMATION</string>
+
+</resources>
