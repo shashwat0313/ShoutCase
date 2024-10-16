@@ -119,12 +119,12 @@ public class shoutCaseService extends AccessibilityService {
     private void loadPreferences() {
         SharedPreferences sharedPreferences = getSharedPreferences("button-settings", Context.MODE_PRIVATE);
 
-        buttonText = sharedPreferences.getString("button-text", "!!!");
-        buttonSize_dp = sharedPreferences.getInt("button-size", 100);
-        buttonColor = sharedPreferences.getInt("button-color",  Color.RED);
-        buttonTextSize_dp = sharedPreferences.getInt("button-text-size", 70);
-        buttonTextColor = sharedPreferences.getInt("button-text-color", Color.BLACK);
-        exclamation = sharedPreferences.getBoolean("exclamation?", false);
+        buttonText = sharedPreferences.getString(getString(R.string.BUTTON_TEXT), "!!!");
+        buttonSize_dp = sharedPreferences.getInt(getString(R.string.BUTTON_SIZE), 100);
+        buttonColor = sharedPreferences.getInt(getString(R.string.BUTTON_COLOR),  Color.RED);
+        buttonTextSize_dp = sharedPreferences.getInt(getString(R.string.BUTTON_TEXT_SIZE), 70);
+        buttonTextColor = sharedPreferences.getInt(getString(R.string.BUTTON_TEXT_COLOR), Color.BLACK);
+        exclamation = sharedPreferences.getBoolean(getString(R.string.BOOLEAN_EXCLAMATION), false);
 
 // Log.i(TAG, "Reloaded Preferences: " +
 //         "buttonText=" + buttonText +

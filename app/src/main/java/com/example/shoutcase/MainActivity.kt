@@ -73,14 +73,14 @@ class MainActivity : ComponentActivity() {
         val keyboardController = LocalSoftwareKeyboardController.current // Get the keyboard controller
 
         // State variables with proper types
-        var buttonText by remember { mutableStateOf(sharedPreferences.getString("button-text", "!!!") ?: "!!!") }
-        var addExclamation by remember { mutableStateOf(sharedPreferences.getBoolean("exclamation?", false)) }
+        var buttonText by remember { mutableStateOf(sharedPreferences.getString(getString(R.string.BUTTON_TEXT), "!!!") ?: "!!!") }
+        var addExclamation by remember { mutableStateOf(sharedPreferences.getBoolean(getString(R.string.BOOLEAN_EXCLAMATION), false)) }
 
-        var buttonSizeInput by remember { mutableStateOf(sharedPreferences.getInt("button-size", 56).toString()) }
-        var buttonTextSizeInput by remember { mutableStateOf(sharedPreferences.getInt("button-text-size", 24).toString()) }
+        var buttonSizeInput by remember { mutableStateOf(sharedPreferences.getInt(getString(R.string.BUTTON_SIZE), 56).toString()) }
+        var buttonTextSizeInput by remember { mutableStateOf(sharedPreferences.getInt(getString(R.string.BUTTON_TEXT_SIZE), 24).toString()) }
 
-        var buttonColorInput by remember { mutableStateOf(String.format("#%06X", 0xFFFFFF and sharedPreferences.getInt("button-color", Color.RED))) }
-        var buttonTextColorInput by remember { mutableStateOf(String.format("#%06X", 0xFFFFFF and sharedPreferences.getInt("button-text-color", Color.BLACK))) }
+        var buttonColorInput by remember { mutableStateOf(String.format("#%06X", 0xFFFFFF and sharedPreferences.getInt(getString(R.string.BUTTON_COLOR), Color.RED))) }
+        var buttonTextColorInput by remember { mutableStateOf(String.format("#%06X", 0xFFFFFF and sharedPreferences.getInt(getString(R.string.BUTTON_TEXT_COLOR), Color.BLACK))) }
 
         var text by remember { mutableStateOf("") }
         val focusManager = LocalFocusManager.current
@@ -229,12 +229,12 @@ class MainActivity : ComponentActivity() {
         buttonTextSize: Int
     ) {
         with(sharedPreferences.edit()) {
-            putString("button-text", buttonText)
-            putBoolean("exclamation?", exclamation)
-            putInt("button-size", buttonSize)
-            putInt("button-color", buttonColor)
-            putInt("button-text-color", buttonTextColor)
-            putInt("button-text-size", buttonTextSize)
+            putString(getString(R.string.BUTTON_TEXT), buttonText)
+            putBoolean(getString(R.string.BOOLEAN_EXCLAMATION), exclamation)
+            putInt(getString(R.string.BUTTON_SIZE), buttonSize)
+            putInt(getString(R.string.BUTTON_COLOR), buttonColor)
+            putInt(getString(R.string.BUTTON_TEXT_COLOR), buttonTextColor)
+            putInt(getString(R.string.BUTTON_TEXT_SIZE), buttonTextSize)
             apply()
         }
     }
