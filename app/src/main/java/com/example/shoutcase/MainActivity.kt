@@ -239,29 +239,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-
-
-    private fun saveSettings(
-        newButtonText: String,
-        newExclamation: Boolean,
-        newButtonSize: Int?,
-        newButtonColor: Int?,
-        newButtonTextColor: Int?,
-        newButtonTextSize: Int?
-    ) {
-        with(sharedPreferences.edit()) {
-            // Retain old values if the new ones are empty or null
-            putString("button-text", if (newButtonText.isNotEmpty()) newButtonText else sharedPreferences.getString("button-text", "!!!"))
-            putBoolean("exclamation?", newExclamation)
-            putInt("button-size", newButtonSize ?: sharedPreferences.getInt("button-size", 56))
-            putInt("button-color", newButtonColor ?: sharedPreferences.getInt("button-color", Color.RED))
-            putInt("button-text-color", newButtonTextColor ?: sharedPreferences.getInt("button-text-color", Color.BLACK))
-            putInt("button-text-size", newButtonTextSize ?: sharedPreferences.getInt("button-text-size", 24))
-
-            apply()
-        }
-    }
-
     private fun restartService(){
         val intent : Intent = Intent(this, shoutCaseService::class.java)
 

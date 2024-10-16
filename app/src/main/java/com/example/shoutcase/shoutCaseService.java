@@ -14,7 +14,7 @@ import android.os.Bundle;
 import android.accessibilityservice.AccessibilityService;
 
 import android.provider.Settings;
-import android.util.Log;
+//import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.WindowManager;
 import android.view.accessibility.AccessibilityEvent;
